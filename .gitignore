@@ -1,0 +1,15 @@
+.coverage
+.DS_Store
+.tox
+dist
+docs/_build
+build/
+venv/
+*.egg-info
+MANIFEST
+.*.swp
+*.egg
+*.pyc
+.DS_Store
+.idea
+.pipconfig
