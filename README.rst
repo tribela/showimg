@@ -1,5 +1,5 @@
 Showimg
-~~~~~~~
+=======
 
 Show image on 256-coloured terminal.
 
