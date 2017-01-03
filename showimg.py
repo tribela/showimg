@@ -1,7 +1,6 @@
 import argparse
 import io
 import shutil
-import sys
 
 from urllib.request import urlopen
 
@@ -57,7 +56,12 @@ def show_image(url):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('image-url')
+    parser.add_argument('image_url', nargs='?')
+    parser.add_argument('--cat', action='store_true',
+                        help='Get random cat image.')
     args = parser.parse_args()
 
-    show_image(args.image_url)
+    if args.cat:
+        show_image('http://thecatapi.com/api/images/get')
+    else:
+        show_image(args.image_url)
