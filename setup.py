@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'showimg=showimg:showimg'
+            'showimg=showimg:main'
         ],
     }
 )

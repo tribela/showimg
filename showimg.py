@@ -1,3 +1,4 @@
+import argparse
 import io
 import shutil
 import sys
@@ -53,5 +54,10 @@ def show_image(url):
     buffer += '\x1b[0m'
     print(buffer, end='')
 
-if __name__ == '__main__':
-    show_image(sys.argv[1])
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('image-url')
+    args = parser.parse_args()
+
+    show_image(args.image_url)
