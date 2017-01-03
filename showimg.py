@@ -64,4 +64,7 @@ def main():
     if args.cat:
         show_image('http://thecatapi.com/api/images/get')
     else:
+        if not args.image_url:
+            parser.print_help()
+            exit(1)
         show_image(args.image_url)
