@@ -1,3 +1,5 @@
+from os import path
+
 try:
     from setuptools import setup
 except ImportError:
@@ -5,8 +7,23 @@ except ImportError:
     use_setuptools()
 
 
+def cwd():
+    return path.abspath(path.dirname(__file__))
+
+
+def readme():
+    with open(path.join(cwd(), 'README.rst')) as fp:
+        return fp.read()
+
+
 setup(
     name='showimg',
+    version='0.1.0',
+    description='Show image on 256-coloured terminal.',
+    long_description=readme(),
+    url='https://github.com/kjwon15/showimg',
+    author='Kjwon15',
+    license='MIT',
     py_modules=['showimg'],
     install_requires=[
         'Pillow>=4.0.0',
