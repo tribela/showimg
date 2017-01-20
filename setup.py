@@ -19,7 +19,7 @@ def readme():
 
 setup(
     name='showimg',
-    version='0.1.0',
+    version='0.1.1',
     description='Show image on 256-coloured terminal.',
     long_description=readme(),
     url='https://github.com/kjwon15/showimg',
