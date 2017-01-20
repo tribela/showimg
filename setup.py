@@ -28,6 +28,7 @@ setup(
     py_modules=['showimg'],
     install_requires=[
         'Pillow>=4.0.0',
+        'requests>=2.12.5',
     ],
     entry_points={
         'console_scripts': [

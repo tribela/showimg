@@ -2,7 +2,7 @@ import argparse
 import io
 import shutil
 
-from urllib.request import urlopen
+import requests
 
 from PIL import Image
 
@@ -20,9 +20,9 @@ def calc_resize(orig_width, orig_height, width, height):
 
 
 def show_image(url):
-    with urlopen(url) as req:
-        file = io.BytesIO(req.read())
-        image = Image.open(file).convert('RGB')
+    response = requests.get(url, allow_redirects=True)
+    file = io.BytesIO(response.content)
+    image = Image.open(file).convert('RGB')
     term_size = shutil.get_terminal_size()
     image.thumbnail(calc_resize(*image.size, *term_size), Image.ANTIALIAS)
 
